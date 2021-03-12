@@ -59,13 +59,6 @@ describe('Modal', () => {
 		).toBe(1);
 	});
 
-	it('creates an svg icon for dismissal', () => {
-		const closeButton = modalEl.getElementsByClassName(MODAL_CLOSE_BUTTON)[0];
-		const icon = closeButton.getElementsByTagName('svg');
-
-		expect(icon.length).toBe(1);
-	});
-
 	it('executes onDismiss when dismiss button is clicked', () => {
 		const closeButton = modalEl.getElementsByClassName(MODAL_CLOSE_BUTTON)[0];
 

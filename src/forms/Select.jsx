@@ -1,9 +1,6 @@
 // @flow
 import * as React from 'react';
-
-import { default as SwarmSelect } from '@meetup/swarm-components/lib/Select';
-import { FieldHelper, FieldLabel } from '@meetup/swarm-components';
-
+import { Select as SwarmSelect, FieldHelper, FieldLabel } from '@meetup/swarm-components';
 import withErrorList from '../utils/components/withErrorList';
 import a11yPassThrough from '../utils/a11yPassThrough';
 import DeprecationWarning from '../utils/components/DeprecationWarning';

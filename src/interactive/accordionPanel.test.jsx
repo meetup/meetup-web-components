@@ -7,12 +7,7 @@ import ToggleSwitch from '../forms/ToggleSwitch';
 import { textContent1 } from '../../__mocks__/textContentMocks';
 
 describe('AccordionPanel', function() {
-	let panel, openPanel;
-
-	const customIcon = 'plus';
-	const customIconActive = 'minus';
-
-	let handlePanelClickCallback, onClickCallback;
+	let panel, openPanel, handlePanelClickCallback, onClickCallback;
 
 	beforeEach(() => {
 		handlePanelClickCallback = jest.fn();
@@ -52,10 +47,6 @@ describe('AccordionPanel', function() {
 	});
 
 	describe('Panel basic behavior', () => {
-		it('exists and renders with mock props', () => {
-			expect(panel).toMatchSnapshot();
-		});
-
 		it(`has the class ${ACTIVEPANEL_CLASS} when props is open`, function() {
 			const node = openPanel.find(`.${ACTIVEPANEL_CLASS}`);
 			expect(node.length).toBe(1);
@@ -132,41 +123,9 @@ describe('AccordionPanel', function() {
 			panelLeftIcon = null;
 		});
 
-		it('exists and renders icon left', () => {
-			expect(panelLeftIcon).toMatchSnapshot();
-		});
-
 		it('reverses Flex direction when icon is right-aligned', () => {
 			const node = panelLeftIcon.find('.atAll_flex--rowReverse');
 			expect(node.length).toBe(1);
-		});
-	});
-
-	describe('Panel with custom icon', () => {
-		let panelCustomIcon;
-
-		beforeEach(() => {
-			panelCustomIcon = shallow(
-				<AccordionPanel
-					label="First Section"
-					indicatorAlign="left"
-					indicatorIcon={customIcon}
-					indicatorIconActive={customIconActive}
-					panelContent={
-						<div className="runningText">
-							<p>{textContent1}</p>
-						</div>
-					}
-				/>
-			);
-		});
-
-		afterEach(() => {
-			panelCustomIcon = null;
-		});
-
-		it('exists and renders a custom icon', function() {
-			expect(panelCustomIcon).toMatchSnapshot();
 		});
 	});
 
@@ -195,10 +154,6 @@ describe('AccordionPanel', function() {
 		afterEach(() => {
 			panelSwitch = null;
 			handleToggleSpy.mockRestore();
-		});
-
-		it('exists and renders a toggle switch', function() {
-			expect(panelSwitch).toMatchSnapshot();
 		});
 
 		it('calls handleToggle when toggle switch is clicked', function() {

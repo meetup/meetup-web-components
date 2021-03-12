@@ -51,7 +51,7 @@ describe('Button', () => {
 	describe('Button with icon', () => {
 		describe('right aligned', () => {
 			it('should set icon container to reverse', () => {
-				const icon = <Icon shape="chevron-right" />;
+				const icon = <Icon shape="arrow-right" />;
 				const button = mount(
 					<Button icon={icon} primary right>
 						Click me
@@ -65,7 +65,7 @@ describe('Button', () => {
 		});
 		describe('right aligned icon on Link', () => {
 			it('should set icon container to reverse', () => {
-				const icon = <Icon shape="chevron-right" />;
+				const icon = <Icon shape="arrow-right" />;
 				const button = mount(
 					<Button icon={icon} component={Link} primary right>
 						Click me
@@ -95,14 +95,6 @@ describe('Button', () => {
 			);
 
 			expect(buttonLinkComponent.prop('to')).toBe(link);
-		});
-	});
-
-	describe('deprecation error', () => {
-		it('should error when a Link is passed as a component', () => {
-			global.console = { error: jest.fn() };
-			shallow(<Button component="div">Click</Button>);
-			expect(console.error).toBeCalled();
 		});
 	});
 });

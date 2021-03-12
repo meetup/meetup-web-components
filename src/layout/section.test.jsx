@@ -18,9 +18,6 @@ describe('Section', function() {
 	afterEach(() => {
 		section = null;
 	});
-	it('exists', function() {
-		expect(section).toMatchSnapshot();
-	});
 	it(`check that default component has '${SECTION_CLASS}' class`, function() {
 		expect(section.hasClass(SECTION_CLASS)).toBe(true);
 	});

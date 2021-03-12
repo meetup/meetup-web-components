@@ -95,18 +95,12 @@ describe('AccordionPanelGroup', () => {
 			accordionPanelGroup = null;
 		});
 
-		it('renders panels from array', function() {
-			expect(accordionPanelGroup).toMatchSnapshot();
-		});
-
 		it('renders all the panels given', function() {
 			const panels = accordionPanelGroup.find(`.list-item`);
 			expect(panels.length).toEqual(3);
 		});
 
 		it('gives panels a panelIndex', () => {
-			expect(accordionPanelGroup).toMatchSnapshot();
-
 			const panels = accordionPanelGroup.find(AccordionPanel);
 			expect(panels.at(0).prop('panelIndex')).not.toBeUndefined();
 			expect(panels.at(1).prop('panelIndex')).not.toBeUndefined();

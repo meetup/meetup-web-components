@@ -23,10 +23,6 @@ describe('TogglePill', () => {
 		togglePillComponent = null;
 	});
 
-	it('renders a component with expected attributes', () => {
-		expect(togglePillComponent).toMatchSnapshot();
-	});
-
 	it('executes onChange when clicked', () => {
 		expect(onChangeMock).not.toHaveBeenCalled();
 		togglePillComponent.simulate('click');

@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 
 import ToggleWrapper from './ToggleWrapper';
 
@@ -63,20 +63,6 @@ describe('withLoading', function() {
 	});
 
 	describe('when this.props.type is not checkbox or radio', () => {
-		let plainComponent;
-
-		beforeEach(() => {
-			plainComponent = shallow(<PlainComponent />);
-			onToggle.mockClear();
-		});
-		afterEach(() => {
-			plainComponent = null;
-		});
-
-		it('matches snapshot', () => {
-			expect(plainComponent).toMatchSnapshot();
-		});
-
 		it('isActive state updates using child component handler', () => {
 			const plainComponent = mount(<PlainComponent />);
 			const plainComponentNode = plainComponent.find(`.${PLAIN_COMPONENT_CLASS}`);
@@ -103,20 +89,6 @@ describe('withLoading', function() {
 	});
 
 	describe('when this.props.type is checkbox', () => {
-		let checkboxComponent;
-
-		beforeEach(() => {
-			checkboxComponent = shallow(<InputComponent inputType="checkbox" />);
-			onToggle.mockClear();
-		});
-		afterEach(() => {
-			checkboxComponent = null;
-		});
-
-		it('matches snapshot', () => {
-			expect(checkboxComponent).toMatchSnapshot();
-		});
-
 		it('isActive state updates onChange', () => {
 			const checkboxComponent = mount(<InputComponent inputType="checkbox" />);
 			expect(checkboxComponent.find(ToggleWrapper).instance().state.isActive).toBe(
@@ -130,20 +102,6 @@ describe('withLoading', function() {
 	});
 
 	describe('when this.props.type is radio', () => {
-		let radioComponent;
-
-		beforeEach(() => {
-			radioComponent = shallow(<InputComponent inputType="radio" />);
-			onToggle.mockClear();
-		});
-		afterEach(() => {
-			radioComponent = null;
-		});
-
-		it('matches snapshot', () => {
-			expect(radioComponent).toMatchSnapshot();
-		});
-
 		it('does not pass internal onKeyUp to children', () => {
 			const radioComponent = mount(<InputComponent inputType="radio" />);
 			const checkboxKeyUp = radioComponent.find('input').prop('onKeyUp');

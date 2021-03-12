@@ -21,12 +21,9 @@ describe('Default Hscroll', () => {
 	beforeEach(() => {
 		component = shallow(<Hscroll>{listItems}</Hscroll>);
 	});
+
 	afterEach(() => {
 		component = null;
-	});
-
-	it('exists', () => {
-		expect(component).toMatchSnapshot();
 	});
 
 	it('does not have graident class when `gradient` prop is not supplied', () => {

@@ -20,22 +20,16 @@ const ITEMS = [
 	],
 	SEPARATOR = '☃';
 
-let inlineblockList, inlineblockListSeparated;
+let inlineblockListSeparated;
 
 describe('InlineBlockList', function() {
 	beforeEach(() => {
-		inlineblockList = shallow(<InlineBlockListComponent items={ITEMS} />);
 		inlineblockListSeparated = shallow(
 			<InlineBlockListComponent items={ITEMS} separator={SEPARATOR} />
 		);
 	});
 	afterEach(() => {
-		inlineblockList = null;
 		inlineblockListSeparated = null;
-	});
-
-	it('exists', function() {
-		expect(inlineblockList).toMatchSnapshot();
 	});
 
 	it(`should have a class of '${INLINEBLOCKLIST_SEPERATED_CLASS}' when a separator is defined`, () => {

@@ -3,8 +3,6 @@ import { shallow, mount } from 'enzyme';
 import Section from '../layout/Section';
 import Chunk from '../layout/Chunk';
 import Button from '../forms/Button';
-import { Icon as SwarmIcon } from '@meetup/swarm-components';
-
 import Tooltip from './Tooltip';
 
 const dropdownContent = (
@@ -154,31 +152,6 @@ describe('Tooltip', () => {
 			setTimeout(() => {
 				expect(closedComponent.state('isActive')).toBeFalsy();
 			}, 10);
-		});
-	});
-
-	describe('tooltip with a close button', () => {
-		const openTooltipWithCloseJSX = (
-			<Tooltip
-				isActive
-				withClose
-				align="right"
-				id={dropdownId}
-				trigger={dropdownTrigger}
-				content={dropdownContent}
-			/>
-		);
-		const wrapper = mount(openTooltipWithCloseJSX);
-		const closeBtn = wrapper.find(SwarmIcon);
-
-		it('should render correctly', () => {
-			expect(wrapper).toMatchSnapshot();
-		});
-
-		it('should hide tooltip close button is clicked', () => {
-			expect(wrapper.state('isActive')).toBeTruthy();
-			closeBtn.simulate('click');
-			expect(wrapper.state('isActive')).toBeFalsy();
 		});
 	});
 

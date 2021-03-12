@@ -117,7 +117,7 @@ NavItem.propTypes = {
 	labelClassName: PropTypes.string,
 	linkClassName: PropTypes.string,
 	counterBadgeClassName: PropTypes.string,
-	icon: PropTypes.element,
+	icon: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 	hasUpdates: PropTypes.bool,
 	isNewNavActive: PropTypes.bool,
 };

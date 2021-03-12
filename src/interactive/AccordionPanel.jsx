@@ -266,7 +266,7 @@ class AccordionPanel extends React.Component {
 AccordionPanel.defaultProps = {
 	isOpen: false,
 	indicatorAlign: 'right',
-	indicatorIcon: 'chevron-down',
+	indicatorIcon: 'arrow-right',
 	indicatorIconSize: 'xs',
 };
 

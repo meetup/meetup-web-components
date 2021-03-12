@@ -26,10 +26,6 @@ describe('Textarea', function() {
 		shallowComponent = shallow(<Textarea {...props} required />);
 	});
 
-	it('exists', function() {
-		expect(shallowComponent).toMatchSnapshot();
-	});
-
 	it('should set state to value on `overrideValue`', function() {
 		shallowComponent.setProps({ value: undefined });
 		expect(shallowComponent.state().value).toBe('');
@@ -55,7 +51,6 @@ describe('Textarea', function() {
 	it('should have a label when label is given', () => {
 		const component = shallow(<Textarea {...props} label="Super Hero" />);
 		expect(component.find(FieldLabel).length).toBe(1);
-		expect(component).toMatchSnapshot();
 	});
 
 	it('should have helper text when helper text is given', () => {
@@ -67,24 +62,10 @@ describe('Textarea', function() {
 			/>
 		);
 		expect(component.find(FieldHelper).length).toBe(1);
-		expect(component).toMatchSnapshot();
 	});
 
 	it('should have a required attribute when specified', () => {
 		expect(mountedComponent.props().required).toBe(true);
-	});
-
-	it('should have a required attribute when specified', () => {
-		const component = shallow(
-			<Textarea {...props} label="Super Hero" requiredText="required!" />
-		);
-		expect(component).toMatchSnapshot();
-	});
-
-	it('should set its value on input change', function() {
-		expect(shallowComponent).toMatchSnapshot();
-		shallowComponent.setProps({ value: 'New text value!' });
-		expect(shallowComponent).toMatchSnapshot();
 	});
 
 	// skipping becuase it will be tested in https://meetup.atlassian.net/browse/SDS-744

@@ -8,6 +8,9 @@ storiesOf('Forms/TextInput', module)
 	.addDecorator(decorateWithBasics)
 	.addDecorator(decorateWithInfo)
 	.addParameters({ info: { propTable: TextInput } })
+	.add('type "password"', () => (
+		<TextInput type="password" label="Password" value="password" id="password" />
+	))
 	.add('type "tel"', () => (
 		<TextInput type="tel" label="Telephone Number" id="telephone" />
 	))
@@ -127,7 +130,7 @@ storiesOf('Forms/TextInput', module)
 		},
 		{
 			info: {
-				text: `Note: updating field with charcounter relies on parent to give value, 
+				text: `Note: updating field with charcounter relies on parent to give value,
             thats why you cant interact with the field in this story`,
 			},
 		}

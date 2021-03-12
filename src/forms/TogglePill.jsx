@@ -22,9 +22,12 @@ export class TogglePill extends React.PureComponent {
 			...other
 		} = this.props;
 
-		const clickCallback = onClick ? onClick : onChange ? onChange : false;
 		return (
-			<SwarmUITogglePill checked={isActive} onClick={clickCallback} {...other} />
+			<SwarmUITogglePill
+				checked={isActive}
+				onClick={onClick || onChange}
+				{...other}
+			/>
 		);
 	}
 }

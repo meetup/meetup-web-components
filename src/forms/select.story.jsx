@@ -15,7 +15,7 @@ storiesOf('Forms/Select', module)
 	))
 	.add('with default selection using `value`', () => (
 		<Select
-			value="drhorse"
+			defaultValue="drhorse"
 			label="Select a name for your horse"
 			id="horsename"
 			name="horsename"
