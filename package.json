@@ -119,7 +119,7 @@
     "mwp-app-render": "22.4.3075",
     "mwp-config": "22.4.3075",
     "mwp-i18n": "22.4.3075",
-    "node-sass": "4.10.0",
+    "node-sass": "7.0.0",
     "npm-run-all": "4.0.2",
     "prettier": "1.13.5",
     "prop-types": "15.6.0",
